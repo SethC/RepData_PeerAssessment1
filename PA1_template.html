@@ -74,12 +74,13 @@ activity&lt;-read.csv(&quot;./data/activity.csv&quot;, na.strings=&quot;NA&quot;
 <li>A histogram to illustrate the distribution of total steps taken per day. And,</li>
 </ol>
 <pre class="r"><code>library(dplyr)</code></pre>
+<pre><code>## Warning: package 'dplyr' was built under R version 3.1.3</code></pre>
 <pre><code>## 
 ## Attaching package: 'dplyr'
 ## 
-## The following object is masked from 'package:stats':
+## The following objects are masked from 'package:stats':
 ## 
-##     filter
+##     filter, lag
 ## 
 ## The following objects are masked from 'package:base':
 ## 
@@ -166,9 +167,9 @@ hist(totalActivityByDay$dailyTotal, xlab = &quot;Total Steps Per Day&quot;, main
 <div id="are-there-differences-in-activity-patterns-between-weekdays-and-weekends" class="section level2">
 <h2>Are there differences in activity patterns between weekdays and weekends?</h2>
 <p>To investigate, first add field to indicate whether a day is weekday or weekend:</p>
-<pre class="r"><code>library(lubridate)
-
-#create weekday field
+<pre class="r"><code>library(lubridate)</code></pre>
+<pre><code>## Warning: package 'lubridate' was built under R version 3.1.3</code></pre>
+<pre class="r"><code>#create weekday field
 filledActivity &lt;- mutate(filledActivity, dow = weekdays(ymd(date)))
 
 #assign factor levels absed on weekday
